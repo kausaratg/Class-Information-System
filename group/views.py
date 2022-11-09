@@ -3,6 +3,9 @@ import string
 
 # Create your views here.
 
+def index(request):
+    return render(request, "group/index.html")
+
 def class_group(request):
     if request.method == "POST":
         name = request.POST['name']
