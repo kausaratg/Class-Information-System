@@ -7,6 +7,8 @@ class ClassGroup(models.Model):
     def __str__(self):
         return self.group
 
+
+
 class Post(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
@@ -16,3 +18,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    comment = models.TextField()
+    post = models.ForeignKey(Post, on_delete = models.CASCADE)
+    date = models.DateTimeField(auto_now_add = True)
+
+    def __str__(self):
+        return self.post.title

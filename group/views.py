@@ -22,7 +22,7 @@ def class_group(request):
         for i in range(0, 26):
             test_list.append(alpha1)
             alpha1 = chr(ord(alpha1) + 1)
-        if first_letter in test_list[:1]:
+        if first_letter in test_list[:2]:
             result = "You are in group A"
         elif first_letter in test_list[2:11]:
             result = "You are in group C"
