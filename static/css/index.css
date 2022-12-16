@@ -1,1 +1,23 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}:root{--main-blue:#71b7e6;--main-purple:#9b59b6;--main-grey:#ccc;--sub-grey:#d9d9d9}body{height:100vh;background:linear-gradient(135deg,var(--main-blue),var(--main-purple));padding:10px}.body{margin-top:20rem}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif
+}
+
+:root {
+    --main-blue: #71b7e6;
+    --main-purple: #9b59b6;
+    --main-grey: #ccc;
+    --sub-grey: #d9d9d9
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+    padding: 10px
+}
+
+.body {
+    margin-top: 20rem
+}
