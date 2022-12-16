@@ -1,18 +1,87 @@
-{% extends "base.html" %}
 {% load static %}
-{% block content %}
-<link rel="stylesheet" href="{%static 'css/index.css'%}">
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<a href="{% url 'loginuser'%}" class="btn btn-outline-dark">Login</a>
-<div class="container my-5 text-white body">
-    <h1>Information Management System(Computer Science (2022))</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="d-grid gap-2 col-6 mx-auto my-5">
-    <a href="{%url 'class_group'%}" class="btn btn-primary mt-5" type="button">Group</a>
-    <a href="{%url 'posts'%}" class="btn btn-primary my-2" type="button">Recent Information</a>
-    <button class="btn btn-primary my-2" type="button">Timetable</button>
-    </div>
-</div>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS School Page</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Parallax HTML5 Template">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="{%static 'plugins/themefisher-font/style.css' %}">
+        <!-- bootstrap.min css -->
+        <link rel="stylesheet" href="{%static 'plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="{%static 'plugins/animate-css/animate.css' %}">
+        <!-- Magnific popup css -->
+        <link rel="stylesheet" href="{%static 'plugins/magnific-popup/dist/magnific-popup.css' %}">
+        <!-- Slick Carousel -->
+        <link rel="stylesheet" href="{%static 'plugins/slick-carousel/slick.css' %}">
+        <link rel="stylesheet" href="{%static 'plugins/slick-carousel/slick-theme.css' %}">
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{%static 'css1/style.css' %}">
 
-{% endblock %}
+
+	</head>
+
+	<body id="home" data-spy="scroll" data-target=".navbar-nav" data-offset="80">
+		<!--
+	Start Preloader
+	==================================== -->
+		<div class="preloader">
+			<div class="sk-cube-grid">
+				<div class="sk-cube sk-cube1"></div>
+				<div class="sk-cube sk-cube2"></div>
+				<div class="sk-cube sk-cube3"></div>
+				<div class="sk-cube sk-cube4"></div>
+				<div class="sk-cube sk-cube5"></div>
+				<div class="sk-cube sk-cube6"></div>
+				<div class="sk-cube sk-cube7"></div>
+				<div class="sk-cube sk-cube8"></div>
+				<div class="sk-cube sk-cube9"></div>
+			</div>
+		</div>
+		<!-- End Preloader
+	==================================== -->
+
+		<!--
+Welcome Slider
+==================================== -->
+
+		<section class="hero-area overlay" style="background-image: url('{%static 'images/banner/hero-area.jpg' %}');">
+			<!-- <video autoplay muted loop class="hero-video">
+		<source src="images/banner/hero-video.mp4" type="video/mp4">
+	</video> -->
+			<div class="block">
+
+				<h1>Computer Science IMS </h1>
+				<p>Information Management System for computer science (2022) student. </p>
+				<a href="{%url 'class_group'%}" class="btn btn-transparent smooth-scroll">Group</a>
+				<a href="{%url 'posts'%}" class="btn btn-transparent smooth-scroll">Informations</a>
+				<a href="{%url 'timetable' %}" class="btn btn-transparent smooth-scroll">Time Table</a>
+			</div>
+		</section>
+
+
+
+		<!-- Main jQuery -->
+        <script src="{%static 'plugins/jquery/jquery.min.js' %}"></script>
+        <!-- Bootstrap 3.1 -->
+        <script src="{%static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+        <!-- Slick Carousel -->
+        <script src="{%static 'plugins/slick-carousel/slick.min.js' %}"></script>
+        <!-- Portfolio Filtering -->
+        <script src="{%static 'plugins/filterzr/jquery.filterizr.min.js' %}"></script>
+        <!-- Magnific popup -->
+        <script src="{%static 'plugins/magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+        <!-- Google Map API -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+        <script src="plugins/google-map/gmap.js"></script>
+        <!-- wow.min Script -->
+        <script src="{%static 'plugins/wow/wow.min.js' %}"></script>
+        <!-- Custom js -->
+        <script src="{%static 'js/script.js' %}"></script>
+	</body>
+
+</html>

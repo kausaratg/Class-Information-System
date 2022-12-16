@@ -1,9 +1,38 @@
 {%extends "base.html" %}
 {%load static %}
+{% load crispy_forms_tags %}
 {% block content %}
-<form action=" " method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit">
-</form>
-{% endblock content %}
+
+<section id="contact-us" class="contact-us section-bg">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12">
+				<!-- section title -->
+				<div class="title text-center wow fadeIn" data-wow-duration="500ms">
+					<h2>Write <span class="color">Post</span></h2>
+					<div class="border"></div>
+				</div>
+				<!-- /section title -->
+			</div>
+
+
+			<!-- Contact Form -->
+			<div class="contact-form col-lg-6  mx-auto mt-lg-0">
+				<form id="contact-form" method="post" action="" role="form">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <br>
+					<div id="cf-submit">
+						<input type="submit" id="contact-submit" class="btn btn-transparent" value="Enter">
+					</div> 
+				</form>
+			</div>
+			<!-- ./End Contact Form -->
+
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+
+</section> <!-- end section -->
+
+{% endblock %}

@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from post.forms import PostForm
-from post.models import Post
-from django.contrib.auth import authenticate, login
+from post.models import Post, Comment
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
+
 
 
 # Create your views here.
@@ -11,7 +13,7 @@ def postformview(request):
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect ("/")
+            return redirect ("posts")
         return render (request, "posts/postform.html", context)
     else:
         form = PostForm
@@ -20,7 +22,7 @@ def postformview(request):
 
 
 def posts(request):
-    posts = Post.objects.all().order_by("date_created")
+    posts = Post.objects.all().order_by("-date_created")
     context = {"posts":posts}
     return render(request, "posts/posts.html", context)
 
@@ -36,11 +38,19 @@ def loginuser(request):
         return redirect("loginuser")
     return render(request, "posts/loginuser.html")
 
-def postdetail(request, id):
-    postdetail = Post.objects.get(id=id)
-    comment = postdetail.comment.all()
-    total_comment = comment.count()
-    context = {"postdetail":postdetail, "comment":comment, "total_comment":total_comment}
-    return render(request, "posts/postdetail.html", context)
+def logout_user(request):
+    logout(request)
+    return redirect('index')
 
+def postdetail(request, pk):
+    postdetail = Post.objects.get(pk=pk)
+    comments = postdetail.comments.all()
+    total_comment = comments.count()
+    if request.method == "POST":
+        comment = request.POST['comment']
+        newcomment = Comment.objects.create(comment=comment, post=postdetail)
+        newcomment.save()
+        return HttpResponseRedirect(reverse("postdetail", args=[postdetail.id]))
+    context = {"postdetail":postdetail, "comments":comments, "total_comment":total_comment}
+    return render(request, "posts/postdetail.html", context)
 

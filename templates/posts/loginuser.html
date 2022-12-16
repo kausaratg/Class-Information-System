@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="" method="POST">
+{% comment %} <form action="" method="POST">
     {% csrf_token %}
     <div>
         <label for="username">Username</label>
@@ -12,5 +12,44 @@
         <input type = "password" name="password"  placeholder="password" required>
     </div>
     <input type="submit">
-</form>
+</form> {% endcomment %}
+
+<section id="contact-us" class="contact-us section-bg">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12">
+				<!-- section title -->
+				<div class="title text-center wow fadeIn" data-wow-duration="500ms">
+					<h2>Sign <span class="color">In</span></h2>
+					<div class="border"></div>
+				</div>
+				<!-- /section title -->
+			</div>
+
+            <h4 class="mx-auto">This page is for Course Representative and admin User.</h4>
+			<!-- Contact Form -->
+			<div class="contact-form col-lg-6 mt-2 mx-auto mt-lg-0 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+				<form id="contact-form" method="post" action=" " role="form">
+                    {% csrf_token %}
+					<div class="form-group">
+						<input type="text" placeholder="Username" class="form-control" name="username" id="username">
+					</div>
+
+					<div class="form-group">
+						<input type="password" placeholder="Password" class="form-control" name="password" id="password">
+                    </div>
+					<div id="cf-submit">
+						<input type="submit" id="contact-submit" class="btn btn-transparent" value="Enter">
+					</div>
+
+				</form>
+			</div>
+			<!-- ./End Contact Form -->
+
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+
+
+</section> <!-- end section -->
 {% endblock %}

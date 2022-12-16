@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+{% comment %} <h2>{{postdetail.title}}</h2>
+<p>{{postdetail.description}}</p>
+<small><bold>Group:</bold> {{postdetail.group}}</small>
+<br>
+<small>{{postdetail.date_created}}</small>
+<hr>
+<h4>Comment: {{total_comment}} </h4>
+{%for comment in comments %}
+    <p>{{comment.comment}}</p>
+    <small>{{comment.date}}</small>
+    <hr>
+{% endfor %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="comment" placeholder="Comment Here" required>
+    <input type="submit">
+</form> {% endcomment %}
+
+<section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1>Title: {{postdetail.title}}</h1>
+          <ul class="list-inline mb-50">
+            <li class="list-inline-item">Group: {{postdetail.group}}</li>
+            <li class="list-inline-item">{{postdetail.date_created}}</li>
+          </ul>
+        </div>
+        <div class="col-lg-12">
+          <h4>{{postdetail.description}}</h4>
+        </div>
+      </div>
+      <hr>
+      {%for comment in comments %}
+        <p>{{comment.comment}}</p>
+        <small>{{comment.date}}</small>
+        <hr>
+      {% endfor %}
+      <div class="contact-form col-lg-6 mt-2 mx-auto mt-lg-0">
+        <form id="contact-form" method="post" action=" " role="form">
+            {%csrf_token%}
+            <div class="form-group">
+                <input type="text" placeholder="Comment" class="form-control" name="comment" id="name" required>
+            </div>
+            <div id="cf-submit">
+                <input type="submit" id="contact-submit" class="btn btn-transparent" value="Enter">
+            </div>
+
+        </form>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

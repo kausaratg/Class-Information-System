@@ -1,27 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<section id="contact-us" class="contact-us section-bg">
+	<div class="container">
+		<div class="row">
 
-<div class="container">
-    <div style="float:right;" class="images">
-        <img class="image1" src="{%static "images/babcock_logo.png"%}" alt="babcock University">
-        <img class="image2" src="{%static "images/bucc_logo.png"%}" alt="bucc">
-    </div>
-    <div class="title">Know Your Group (Computer Science)</div>
-    <form action="" method="post">
-        {% csrf_token %}
-      <div class="user__details">
-        <div class="input__box">
-          <span class="details">Enter Full Name</span>
-          <input type="text" placeholder="LastName(Surname)          FirstName" name="name" required>
-        </div>
-      </div>
-      <div class="button">
-        <input type="submit" value="Group">
-      </div>
-    </form>
-    <h2>{{result}}</h2>
+			<div class="col-12">
+				<!-- section title -->
+				<div class="title text-center wow fadeIn" data-wow-duration="500ms">
+					<h2>Know Your Group <span class="color">Computer Science</span></h2>
+					<div class="border"></div>
+				</div>
+				<!-- /section title -->
+			</div>
 
-</div>
+
+			<!-- Contact Form -->
+			<div class="contact-form col-lg-6 mt-2 mx-auto mt-lg-0 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+				<form id="contact-form" method="post" action=" " role="form">
+          {%csrf_token%}
+					<div class="form-group">
+						<input type="text" placeholder="Enter Full Name: LastName(surname)    FirstName" class="form-control" name="name" id="name" required>
+					</div>
+					<div id="cf-submit">
+						<input type="submit" id="contact-submit" class="btn btn-transparent" value="Enter">
+					</div>
+
+				</form>
+        <br>
+        <h2 class="">{{result}}</h2>
+			</div>
+			<!-- ./End Contact Form -->
+
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+
+
+</section> <!-- end section -->
+
 {% endblock %}

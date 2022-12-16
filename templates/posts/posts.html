@@ -1,11 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 {% if user.is_authenticated %}
 <a href="{% url 'form'%}" class="btn btn-outline-dark">Write Post</a>
 {% endif %}
-{%for post in posts %}
-<h2>{{post.title}}</h2>
-<p>{{post.description}}</p>
-<small> {{post.date_created}}</small>
-{% endfor %}
-{%endblock %}
+<section id="blog" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- section title -->
+				<div class="title text-center wow fadeInDown">
+					<h2> <span class="color">Posts</span></h2>
+					<div class="border"></div>
+				</div>
+				<!-- /section title -->
+			</div>
+
+			<!-- single blog post -->
+            {% for post in posts  %}
+                <article class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="500ms">
+                    <div class="post-block">
+                        <div class="media-wrapper">
+                            <img src="{%static 'images/blog/blog-post-1.jpg' %}" alt="amazing caves coverimage" class="img-fluid">
+                        </div>
+                        <div class="content">
+                            <h3><a href="blog.html">{{post.title}}</a></h3>
+                            <p>{{post.description|truncatechars:30 }}</p>
+                            <a class="btn btn-transparent" href="{% url "postdetail" post.id%}">Read more</a>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</section> <!-- end section -->
+{% endblock %}
