@@ -22,8 +22,8 @@ A Django app for information for my Course Mate.
 2. clone the project             ```https://github.com/kausaratg/Class-Information-System.git``` 
 3.  Enter into the directory         ```cd Class-Information-System```
 4.  Pull any recent change from main branch     ```git pull origin main```
-5.  create a virtual env   ```python -m venv venv```
-6. Activate the virtual env   ```env/Scripts/activate```
+5.  create a virtual env   ```python -m venv .venv```
+6. Activate the virtual env   ```source .venv/bin/activate```
 7. Install dependencies  ```pip install -r requirements.txt```
 8. Make migration    ```python manage.py makemigration```
 9. Migrate the project   ```python manage.py migrate```
