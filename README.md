@@ -1,10 +1,10 @@
 # Class-Information-System
-A Django app for Website for my Course Mate. 
+A Django app for information for my Course Mate. 
 
 # Description
 <ul>
 <li>Built with HTML, CSS, Python, Javascript and Django.</li>
-<li>The Webapp allows user to check what group there are, It also allows the course Representative to pass important information. </li>
+<li>The Webapp allows users to check what group there are, It also allows the course Representative to pass important information. </li>
 <li>It allows the student to download the timetable as pdf.</li>
 <li>It allows the student to also comment on a post.</li>
 </ul>
@@ -13,7 +13,7 @@ A Django app for Website for my Course Mate.
 <ul>
 <li>Signin: Allows only the Course rep to signin to be able to post information. </li>
 <li>Group: Allows each member of the Department to know their group.</li>
-<li>Information: Allows the student to see important information concerning the Department.</li>
+<li>Information: Allows the student to see important information concerning the Department and allows them to comment on each post.</li>
 <li>Timetable: Allows student to download the timetable as a pdf file.</li>
 </ul>
 
